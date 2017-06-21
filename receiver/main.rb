@@ -10,8 +10,6 @@ module Receiver
       create_recommender
     end
 
-    # boostbox.com.br/api/v3/clusters.json
-
     def bind
       @queue.subscribe(block: true) do |delivery_info, properties, body|
         url = body.to_s
